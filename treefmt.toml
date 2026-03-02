@@ -1,0 +1,9 @@
+[formatter.cmake-format]
+command = "cmake-format"
+excludes = []
+includes = ["*.cmake", "CMakeLists.txt"]
+options = ["--in-place"]
+
+[formatter.python]
+command = "black"
+includes = ["*.py"]
