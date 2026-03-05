@@ -32,7 +32,7 @@ import rclpy
 from rclpy.node import Node
 
 from std_msgs.msg import Bool
-from geometry_msgs.msg import Pose, Point, Quaternion
+from geometry_msgs.msg import Pose, Quaternion
 from tunnel_msgs.msg import TargetPose, IKSolution, PlatformState
 
 
@@ -226,7 +226,7 @@ class IKNode(Node):
         self._ik_pub = self.create_publisher(IKSolution, "/tunnel/ik_solution", 10)
 
         self.get_logger().info(
-            f"IKNode ready | {n} cables | " f"anchor_r={a_r} m | platform_r={p_r} m"
+            f"IKNode ready | {n} cables | anchor_r={a_r} m | platform_r={p_r} m"
         )
 
     # ── Callbacks ────────────────────────────────────────────────────────────
@@ -294,7 +294,7 @@ class IKNode(Node):
         else:
             self.get_logger().debug(
                 f"IK waypoint {self._traj_index}/{len(self._trajectory)} → "
-                f"lengths={[f'{l:.3f}' for l in lengths]}"
+                f"lengths={[f'{len:.3f}' for len in lengths]}"
             )
 
     def advance_trajectory(self):

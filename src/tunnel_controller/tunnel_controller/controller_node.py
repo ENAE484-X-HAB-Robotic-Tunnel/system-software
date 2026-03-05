@@ -142,8 +142,7 @@ class ControllerNode(Node):
         self.create_timer(dt, self._control_tick)
 
         self.get_logger().info(
-            f"ControllerNode ready | {n} cables | "
-            f"kp={kp} kd={kd} | rate={rate_hz} Hz"
+            f"ControllerNode ready | {n} cables | kp={kp} kd={kd} | rate={rate_hz} Hz"
         )
 
     # ── Callbacks ────────────────────────────────────────────────────────────
