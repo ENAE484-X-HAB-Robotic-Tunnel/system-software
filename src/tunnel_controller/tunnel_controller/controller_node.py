@@ -40,7 +40,7 @@ import numpy as np
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float64MultiArray, MultiArrayDimension
-
+from geometry_msgs.msg import Pose
 from tunnel_msgs.msg import IKSolution, PlatformState
 
 
@@ -72,12 +72,11 @@ class PDController:
 # ---------------------------------------------------------------------------
 
 
-def estimate_ee_pose_from_lengths(leg_lengths: np.ndarray) -> "geometry_msgs.msg.Pose":
+def estimate_ee_pose_from_lengths(leg_lengths: np.ndarray) -> Pose:
     """
     Stub: derive end-effector pose from measured cable lengths (FK).
     Replace with your real FK solver (same one used in ik_node).
     """
-    from geometry_msgs.msg import Pose
 
     pose = Pose()
     pose.orientation.w = 1.0
